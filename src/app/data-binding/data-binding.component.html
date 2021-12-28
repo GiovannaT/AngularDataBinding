@@ -1,4 +1,5 @@
-<section class="property-binding">
+<!-- PROPERTY BINDING -->
+<!-- <section class="property-binding">
 
     <article>
         <h3>Interpolation</h3>
@@ -15,7 +16,6 @@
         <img 
         [src]="urlImagem" 
         alt="Imagem aleatoria Property Binding"> 
-        <!-- syntatic sugar -->
     </article>
 
     <article>
@@ -61,5 +61,52 @@
 
         </div>
     </article>
+</section> -->
 
+EVENT BINDING
+
+<section class="event-binding">
+    <article>
+        <h3>Event Binding</h3>
+        <div>
+            <button 
+            (click)= "botaoClicado()"
+            class="btn btn-primary">Clique aqui</button>
+
+            <input type="text" 
+            (keyup)= "onKeyUp($event)" 
+            (keyup.enter)= "salvarValor(campoInput.value)" 
+            (blur)= "salvarValor(campoInput.value)"
+            #campoInput/>
+
+            <p>Valor atual: {{ valorAtual }} </p>
+            <p>Valor salvo: {{ valorSalvo }} </p>
+
+            <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver"
+            >
+                Passe o mouse aqui
+            </span>
+        </div>
+    </article>
+</section>
+
+<app-meu-form></app-meu-form>
+
+<section class="input-output-properties">
+    <article>
+        <h3>
+            Input/Output Properties
+        </h3>
+
+        <app-curso [nome]="nomeDoCurso"></app-curso>
+
+        <contador 
+        [valor] = "valorInicial"
+        mudouValor="onMudouValor($event)">
+            
+        </contador>
+    </article>
 </section>
